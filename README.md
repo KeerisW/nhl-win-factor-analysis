@@ -2,7 +2,7 @@
 
 An end-to-end data engineering and analytics capstone built in Microsoft Fabric to identify which in-game performance factors are most strongly associated with winning an NHL game.
 
-The project transforms raw game, team, skater and goalie data into a validated star schema, five analytical Delta tables and a four-page Power BI report. The results describe associations with winning; they do not establish causation.
+The project transforms raw game, team, skater and goalie data into a validated star schema, five analytical summary tables and a four-page Power BI report. The results describe associations with winning; they do not establish causation.
 
 ## Business questions
 

@@ -1,0 +1,2365 @@
+createOrReplace
+
+	model Model
+		culture: en-US
+		defaultPowerBIDataSourceVersion: powerBI_V3
+		sourceQueryCulture: en-US
+		dataAccessOptions
+			legacyRedirects
+			returnErrorValuesAsNull
+
+		table gold_analysis_01_winner_loser_averages
+			lineageTag: 16e5af8a-879a-4152-ad9d-c3ddc9923361
+			sourceLineageTag: [dbo].[gold_analysis_01_winner_loser_averages]
+
+			column metric
+				dataType: string
+				lineageTag: b1f7f37b-93cd-4b22-a87d-29cf45c0951e
+				sourceLineageTag: metric
+				summarizeBy: none
+				sourceColumn: metric
+
+				annotation SummarizationSetBy = Automatic
+
+			column winner_average
+				dataType: double
+				lineageTag: 4841f81d-b6e9-4c7b-995e-9374d8e07862
+				sourceLineageTag: winner_average
+				summarizeBy: sum
+				sourceColumn: winner_average
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column loser_average
+				dataType: double
+				lineageTag: 9c66ea40-6445-4982-adfb-9e68f7b84f64
+				sourceLineageTag: loser_average
+				summarizeBy: sum
+				sourceColumn: loser_average
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column difference
+				dataType: double
+				lineageTag: 7442c7a6-27e0-42b2-91f1-c4a51f4460a9
+				sourceLineageTag: difference
+				summarizeBy: sum
+				sourceColumn: difference
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column relative_difference_percentage
+				dataType: double
+				lineageTag: dc174253-bede-4923-b104-4d8a1d3b4fe0
+				sourceLineageTag: relative_difference_percentage
+				summarizeBy: sum
+				sourceColumn: relative_difference_percentage
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition gold_analysis_01_winner_loser_averages = entity
+				mode: directLake
+				source
+					entityName: gold_analysis_01_winner_loser_averages
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_analysis_02_win_factor_correlations
+			lineageTag: e3e343b1-d333-448f-8484-00b7cc285edb
+			sourceLineageTag: [dbo].[gold_analysis_02_win_factor_correlations]
+
+			column metric
+				dataType: string
+				lineageTag: 7fab49ae-6753-4629-9a92-baf1b8d7d005
+				sourceLineageTag: metric
+				summarizeBy: none
+				sourceColumn: metric
+
+				annotation SummarizationSetBy = Automatic
+
+			column column_name
+				dataType: string
+				lineageTag: 2792b636-05d7-41f2-8f3f-a5a0208b2fa8
+				sourceLineageTag: column_name
+				summarizeBy: none
+				sourceColumn: column_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column correlation_with_win
+				dataType: double
+				lineageTag: 20123af6-72de-4da7-8683-b19878ad01be
+				sourceLineageTag: correlation_with_win
+				summarizeBy: sum
+				sourceColumn: correlation_with_win
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column absolute_correlation
+				dataType: double
+				lineageTag: 37d9e820-2a0a-423f-9ada-19e0472cf79c
+				sourceLineageTag: absolute_correlation
+				summarizeBy: sum
+				sourceColumn: absolute_correlation
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column direction
+				dataType: string
+				lineageTag: 4989d478-a616-4a8e-b7f5-553995715354
+				sourceLineageTag: direction
+				summarizeBy: none
+				sourceColumn: direction
+
+				annotation SummarizationSetBy = Automatic
+
+			column relationship_strength
+				dataType: string
+				lineageTag: 107e07ab-6d50-4c7f-bb22-f2177a7302fe
+				sourceLineageTag: relationship_strength
+				summarizeBy: none
+				sourceColumn: relationship_strength
+
+				annotation SummarizationSetBy = Automatic
+
+			partition gold_analysis_02_win_factor_correlations = entity
+				mode: directLake
+				source
+					entityName: gold_analysis_02_win_factor_correlations
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_analysis_03_performance_bands
+			lineageTag: e9188167-f300-4002-ac4c-68b036febfd2
+			sourceLineageTag: [dbo].[gold_analysis_03_performance_bands]
+
+			column metric
+				dataType: string
+				lineageTag: 3be55617-795d-4aa8-8069-6df78374ee25
+				sourceLineageTag: metric
+				summarizeBy: none
+				sourceColumn: metric
+
+				annotation SummarizationSetBy = Automatic
+
+			column column_name
+				dataType: string
+				lineageTag: 56c8bff4-0600-4551-839f-b92a18931f91
+				sourceLineageTag: column_name
+				summarizeBy: none
+				sourceColumn: column_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column performance_band_number
+				dataType: int64
+				formatString: 0
+				lineageTag: 9088baf1-ec0c-415d-a75f-4c3f38c4c001
+				sourceLineageTag: performance_band_number
+				summarizeBy: sum
+				sourceColumn: performance_band_number
+
+				annotation SummarizationSetBy = Automatic
+
+			column performance_band
+				dataType: string
+				lineageTag: 2b5833e7-250d-4123-9675-832cf8ef3f5a
+				sourceLineageTag: performance_band
+				summarizeBy: none
+				sourceColumn: performance_band
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_game_rows
+				dataType: int64
+				formatString: 0
+				lineageTag: e2a5cbbe-a47d-4c97-adb2-540e1e8b1ee4
+				sourceLineageTag: team_game_rows
+				summarizeBy: sum
+				sourceColumn: team_game_rows
+
+				annotation SummarizationSetBy = Automatic
+
+			column minimum_value
+				dataType: double
+				lineageTag: 06de5f1d-840c-49b8-9064-00e8680f6dec
+				sourceLineageTag: minimum_value
+				summarizeBy: sum
+				sourceColumn: minimum_value
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column maximum_value
+				dataType: double
+				lineageTag: 3c17641b-0c7e-4c1a-93c1-1d51cdce2425
+				sourceLineageTag: maximum_value
+				summarizeBy: sum
+				sourceColumn: maximum_value
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column average_value
+				dataType: double
+				lineageTag: c08cee7a-873a-4955-8035-6732e212ae6f
+				sourceLineageTag: average_value
+				summarizeBy: sum
+				sourceColumn: average_value
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column win_percentage
+				dataType: double
+				lineageTag: 50f24c7a-5e55-47f3-98a3-ba558a2e0fbf
+				sourceLineageTag: win_percentage
+				summarizeBy: sum
+				sourceColumn: win_percentage
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition gold_analysis_03_performance_bands = entity
+				mode: directLake
+				source
+					entityName: gold_analysis_03_performance_bands
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_analysis_04_regular_vs_playoffs
+			lineageTag: 6a298105-25ad-4800-864a-8e24dd2489cc
+			sourceLineageTag: [dbo].[gold_analysis_04_regular_vs_playoffs]
+
+			column game_stage
+				dataType: string
+				lineageTag: 99e99336-e901-49fc-ac55-f3f7682c813a
+				sourceLineageTag: game_stage
+				summarizeBy: none
+				sourceColumn: game_stage
+
+				annotation SummarizationSetBy = Automatic
+
+			column metric
+				dataType: string
+				lineageTag: 30a4af54-ba6b-4d01-9404-150c1a9783b8
+				sourceLineageTag: metric
+				summarizeBy: none
+				sourceColumn: metric
+
+				annotation SummarizationSetBy = Automatic
+
+			column column_name
+				dataType: string
+				lineageTag: a7ffc05a-3c80-4aed-8554-f26774ad5a16
+				sourceLineageTag: column_name
+				summarizeBy: none
+				sourceColumn: column_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column winner_average
+				dataType: double
+				lineageTag: 4c618270-bb77-49b7-a389-d98a63af182e
+				sourceLineageTag: winner_average
+				summarizeBy: sum
+				sourceColumn: winner_average
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column loser_average
+				dataType: double
+				lineageTag: 12073fac-4567-4cfe-93f1-9851f1fbdbeb
+				sourceLineageTag: loser_average
+				summarizeBy: sum
+				sourceColumn: loser_average
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column difference
+				dataType: double
+				lineageTag: 8a431579-864b-4c79-915b-efaacc37455f
+				sourceLineageTag: difference
+				summarizeBy: sum
+				sourceColumn: difference
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition gold_analysis_04_regular_vs_playoffs = entity
+				mode: directLake
+				source
+					entityName: gold_analysis_04_regular_vs_playoffs
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_analysis_05_season_trends
+			lineageTag: 6b7b2f30-49e4-471e-a0d4-cbb3a89fa722
+			sourceLineageTag: [dbo].[gold_analysis_05_season_trends]
+
+			column season
+				dataType: int64
+				formatString: 0
+				lineageTag: f3c1a9ae-3205-4da1-8048-52eb748e3e91
+				sourceLineageTag: season
+				summarizeBy: sum
+				sourceColumn: season
+
+				annotation SummarizationSetBy = Automatic
+
+			column season_label
+				dataType: string
+				lineageTag: c2945814-6e85-465f-ac07-2cdffd2c2aaf
+				sourceLineageTag: season_label
+				summarizeBy: none
+				sourceColumn: season_label
+
+				annotation SummarizationSetBy = Automatic
+
+			column metric
+				dataType: string
+				lineageTag: 01252a14-a18e-4500-a002-505cedd86682
+				sourceLineageTag: metric
+				summarizeBy: none
+				sourceColumn: metric
+
+				annotation SummarizationSetBy = Automatic
+
+			column column_name
+				dataType: string
+				lineageTag: 81968c65-d4f9-43c9-8d43-d0d521df0a26
+				sourceLineageTag: column_name
+				summarizeBy: none
+				sourceColumn: column_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column winner_average
+				dataType: double
+				lineageTag: 2733e31a-211a-4e5b-86b9-7616d6f693f4
+				sourceLineageTag: winner_average
+				summarizeBy: sum
+				sourceColumn: winner_average
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column loser_average
+				dataType: double
+				lineageTag: b184ccd0-983a-4a9a-ae34-af15806e56f7
+				sourceLineageTag: loser_average
+				summarizeBy: sum
+				sourceColumn: loser_average
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column difference
+				dataType: double
+				lineageTag: e61c9c49-6362-4513-be91-0863d1c6f79f
+				sourceLineageTag: difference
+				summarizeBy: sum
+				sourceColumn: difference
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition gold_analysis_05_season_trends = entity
+				mode: directLake
+				source
+					entityName: gold_analysis_05_season_trends
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_dim_date
+			lineageTag: 21bc4d5b-55b8-450e-9ca0-6679a1c9f163
+			sourceLineageTag: [dbo].[gold_dim_date]
+
+			column date_key
+				dataType: int64
+				formatString: 0
+				lineageTag: d1705017-24e0-4d8b-8aed-cc05b3542751
+				sourceLineageTag: date_key
+				summarizeBy: none
+				sourceColumn: date_key
+
+				annotation SummarizationSetBy = Automatic
+
+			column game_date
+				dataType: dateTime
+				formatString: General Date
+				lineageTag: a61358f4-7956-4db2-bdf4-a561d2f77788
+				sourceLineageTag: game_date
+				summarizeBy: none
+				sourceColumn: game_date
+
+				annotation SummarizationSetBy = Automatic
+
+			column calendar_year
+				dataType: int64
+				formatString: 0
+				lineageTag: 976a86b4-f5fa-410d-b890-6f3afe00a4e8
+				sourceLineageTag: calendar_year
+				summarizeBy: none
+				sourceColumn: calendar_year
+
+				annotation SummarizationSetBy = Automatic
+
+			column quarter_number
+				dataType: int64
+				formatString: 0
+				lineageTag: 928bbf15-0cf1-4304-8c4e-a19d1ad0f4d6
+				sourceLineageTag: quarter_number
+				summarizeBy: none
+				sourceColumn: quarter_number
+
+				annotation SummarizationSetBy = Automatic
+
+			column quarter_name
+				dataType: string
+				lineageTag: c4debfde-8b3c-4a17-83a6-2cd874d23126
+				sourceLineageTag: quarter_name
+				summarizeBy: none
+				sourceColumn: quarter_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column month_number
+				dataType: int64
+				formatString: 0
+				lineageTag: c40582a2-8034-4045-b696-6e1d15e9f5c3
+				sourceLineageTag: month_number
+				summarizeBy: none
+				sourceColumn: month_number
+
+				annotation SummarizationSetBy = Automatic
+
+			column month_name
+				dataType: string
+				lineageTag: f608d9c4-0361-45f5-80b1-1a006e923c39
+				sourceLineageTag: month_name
+				summarizeBy: none
+				sourceColumn: month_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column month_short_name
+				dataType: string
+				lineageTag: 51024f64-abed-4b54-8443-3740af97e1df
+				sourceLineageTag: month_short_name
+				summarizeBy: none
+				sourceColumn: month_short_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column year_month
+				dataType: string
+				lineageTag: 14f1f45e-45fb-49a8-9a55-98bc6dd71ead
+				sourceLineageTag: year_month
+				summarizeBy: none
+				sourceColumn: year_month
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_of_month
+				dataType: int64
+				formatString: 0
+				lineageTag: dab79d7b-a0fb-4244-a02d-5ae951f38fa3
+				sourceLineageTag: day_of_month
+				summarizeBy: none
+				sourceColumn: day_of_month
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_of_week_number
+				dataType: int64
+				formatString: 0
+				lineageTag: c955dfe8-5256-4d6d-9b65-b9d20006bbb4
+				sourceLineageTag: day_of_week_number
+				summarizeBy: none
+				sourceColumn: day_of_week_number
+
+				annotation SummarizationSetBy = Automatic
+
+			column day_name
+				dataType: string
+				lineageTag: c30cb7e3-d867-4256-b9ed-fe2e88403cce
+				sourceLineageTag: day_name
+				summarizeBy: none
+				sourceColumn: day_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column is_weekend
+				dataType: int64
+				formatString: 0
+				lineageTag: c8b6faf7-5f83-4f84-8ad5-523d0f358377
+				sourceLineageTag: is_weekend
+				summarizeBy: none
+				sourceColumn: is_weekend
+
+				annotation SummarizationSetBy = Automatic
+
+			partition gold_dim_date = entity
+				mode: directLake
+				source
+					entityName: gold_dim_date
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_dim_opponent
+			lineageTag: f062d937-7fa1-4b95-a2e0-d59a231ac666
+			sourceLineageTag: [dbo].[gold_dim_opponent]
+
+			column opponent_team_id
+				dataType: int64
+				formatString: 0
+				lineageTag: 0e851ebc-d283-4f25-88de-052b044a0c68
+				sourceLineageTag: opponent_team_id
+				summarizeBy: none
+				sourceColumn: opponent_team_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_team_name
+				dataType: string
+				lineageTag: fe452f7c-2ee7-451a-bf51-3e66a36d9a7b
+				sourceLineageTag: opponent_team_name
+				summarizeBy: none
+				sourceColumn: opponent_team_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_abbreviation
+				dataType: string
+				lineageTag: 3a95ed4a-de32-4c95-a4d2-41c4a50a32c1
+				sourceLineageTag: opponent_abbreviation
+				summarizeBy: none
+				sourceColumn: opponent_abbreviation
+
+				annotation SummarizationSetBy = Automatic
+
+			partition gold_dim_opponent = entity
+				mode: directLake
+				source
+					entityName: gold_dim_opponent
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_dim_season
+			lineageTag: 2fb23ed9-fc32-4f9e-8007-a693a3e37be1
+			sourceLineageTag: [dbo].[gold_dim_season]
+
+			column season
+				dataType: int64
+				formatString: 0
+				lineageTag: 3549644b-cedf-4205-9abc-c75c365655a6
+				sourceLineageTag: season
+				summarizeBy: none
+				sourceColumn: season
+
+				annotation SummarizationSetBy = Automatic
+
+			column season_label
+				dataType: string
+				lineageTag: 57fe1316-9469-4a44-8f1d-d247606f1cc7
+				sourceLineageTag: season_label
+				summarizeBy: none
+				sourceColumn: season_label
+
+				annotation SummarizationSetBy = Automatic
+
+			column season_start_year
+				dataType: int64
+				formatString: 0
+				lineageTag: d48af6a4-d344-46a5-85fd-572b60924f83
+				sourceLineageTag: season_start_year
+				summarizeBy: none
+				sourceColumn: season_start_year
+
+				annotation SummarizationSetBy = Automatic
+
+			column season_end_year
+				dataType: int64
+				formatString: 0
+				lineageTag: f62665c5-cc6e-4d36-8225-75a5e99e261c
+				sourceLineageTag: season_end_year
+				summarizeBy: none
+				sourceColumn: season_end_year
+
+				annotation SummarizationSetBy = Automatic
+
+			column complete_metric_period_flag
+				dataType: int64
+				formatString: 0
+				lineageTag: 1d5dd01b-db71-4743-9a48-717c3bdc6b7c
+				sourceLineageTag: complete_metric_period_flag
+				summarizeBy: none
+				sourceColumn: complete_metric_period_flag
+
+				annotation SummarizationSetBy = Automatic
+
+			partition gold_dim_season = entity
+				mode: directLake
+				source
+					entityName: gold_dim_season
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_dim_team
+			lineageTag: 502d07de-43e9-42d1-a0c1-1a7a42b8748c
+			sourceLineageTag: [dbo].[gold_dim_team]
+
+			column team_id
+				dataType: int64
+				formatString: 0
+				lineageTag: 201a78ae-e866-408d-a7bf-5fcfd205dfc1
+				sourceLineageTag: team_id
+				summarizeBy: none
+				sourceColumn: team_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_name
+				dataType: string
+				lineageTag: 4c6ea2df-5cfe-48d0-9060-4d1d3752a944
+				sourceLineageTag: team_name
+				summarizeBy: none
+				sourceColumn: team_name
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_abbreviation
+				dataType: string
+				lineageTag: 7512d5ee-1919-4fe3-929d-78e2f1025f1b
+				sourceLineageTag: team_abbreviation
+				summarizeBy: none
+				sourceColumn: team_abbreviation
+
+				annotation SummarizationSetBy = Automatic
+
+			partition gold_dim_team = entity
+				mode: directLake
+				source
+					entityName: gold_dim_team
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_fact_team_game
+			lineageTag: 3e2804e8-b028-48a7-af64-9424a61f30da
+			sourceLineageTag: [dbo].[gold_fact_team_game]
+
+			column game_id
+				dataType: int64
+				formatString: 0
+				lineageTag: 822143de-f7e3-4a95-b760-309a6e21e204
+				sourceLineageTag: game_id
+				summarizeBy: sum
+				sourceColumn: game_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column season
+				dataType: int64
+				formatString: 0
+				lineageTag: 1780462c-17a5-4d8b-941f-774e83918ce7
+				sourceLineageTag: season
+				summarizeBy: none
+				sourceColumn: season
+
+				annotation SummarizationSetBy = Automatic
+
+			column game_type
+				dataType: string
+				lineageTag: 38b19875-891d-470a-9053-01fd8f8012ef
+				sourceLineageTag: game_type
+				summarizeBy: none
+				sourceColumn: game_type
+
+				annotation SummarizationSetBy = Automatic
+
+			column game_date_time_gmt
+				dataType: dateTime
+				formatString: General Date
+				lineageTag: 607cb2ef-51ac-4b46-9934-35873d1b38e4
+				sourceLineageTag: game_date_time_gmt
+				summarizeBy: none
+				sourceColumn: game_date_time_gmt
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_id
+				dataType: int64
+				formatString: 0
+				lineageTag: 145b0eca-f9e1-4716-a6b1-4c2f73eda5ac
+				sourceLineageTag: team_id
+				summarizeBy: none
+				sourceColumn: team_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_team_id
+				dataType: int64
+				formatString: 0
+				lineageTag: 355ed297-e221-44bb-a48f-f96366c5f5af
+				sourceLineageTag: opponent_team_id
+				summarizeBy: none
+				sourceColumn: opponent_team_id
+
+				annotation SummarizationSetBy = Automatic
+
+			column home_or_away
+				dataType: string
+				lineageTag: 6db5e2fa-ab14-450f-b3b1-64374d90cf47
+				sourceLineageTag: home_or_away
+				summarizeBy: none
+				sourceColumn: home_or_away
+
+				annotation SummarizationSetBy = Automatic
+
+			column home_flag
+				dataType: int64
+				formatString: 0
+				lineageTag: b9ce4bf9-6f14-4fe7-ad52-5bed39df615f
+				sourceLineageTag: home_flag
+				summarizeBy: sum
+				sourceColumn: home_flag
+
+				annotation SummarizationSetBy = Automatic
+
+			column playoff_flag
+				dataType: int64
+				formatString: 0
+				lineageTag: c89c3ea7-abc3-48f5-94f1-cbcf0636972e
+				sourceLineageTag: playoff_flag
+				summarizeBy: sum
+				sourceColumn: playoff_flag
+
+				annotation SummarizationSetBy = Automatic
+
+			column settled_in
+				dataType: string
+				lineageTag: 91d98242-0d86-4308-bbf9-d7a1cc147522
+				sourceLineageTag: settled_in
+				summarizeBy: none
+				sourceColumn: settled_in
+
+				annotation SummarizationSetBy = Automatic
+
+			column regulation_flag
+				dataType: int64
+				formatString: 0
+				lineageTag: 4f0f5abc-05a1-4656-8cd2-320858a24968
+				sourceLineageTag: regulation_flag
+				summarizeBy: sum
+				sourceColumn: regulation_flag
+
+				annotation SummarizationSetBy = Automatic
+
+			column overtime_flag
+				dataType: int64
+				formatString: 0
+				lineageTag: cb12e6f7-fd7a-40b9-ba0f-ff8a99fa3922
+				sourceLineageTag: overtime_flag
+				summarizeBy: sum
+				sourceColumn: overtime_flag
+
+				annotation SummarizationSetBy = Automatic
+
+			column head_coach
+				dataType: string
+				lineageTag: dbeb171c-83f6-49b8-a4cf-18a143dc9684
+				sourceLineageTag: head_coach
+				summarizeBy: none
+				sourceColumn: head_coach
+
+				annotation SummarizationSetBy = Automatic
+
+			column start_rink_side
+				dataType: string
+				lineageTag: 8c65ba9c-3dd8-4959-ac2e-68871eeb08de
+				sourceLineageTag: start_rink_side
+				summarizeBy: none
+				sourceColumn: start_rink_side
+
+				annotation SummarizationSetBy = Automatic
+
+			column win_flag
+				dataType: int64
+				formatString: 0
+				lineageTag: d7ed1090-9bf8-418c-bea7-c1573e90fa1f
+				sourceLineageTag: win_flag
+				summarizeBy: sum
+				sourceColumn: win_flag
+
+				annotation SummarizationSetBy = Automatic
+
+			column result_category
+				dataType: string
+				lineageTag: 6b1478e9-2baa-47ad-90df-4164d0257515
+				sourceLineageTag: result_category
+				summarizeBy: none
+				sourceColumn: result_category
+
+				annotation SummarizationSetBy = Automatic
+
+			column win_loss_analysis_flag
+				dataType: int64
+				formatString: 0
+				lineageTag: 29500195-2061-4735-ba2c-01165db9a133
+				sourceLineageTag: win_loss_analysis_flag
+				summarizeBy: sum
+				sourceColumn: win_loss_analysis_flag
+
+				annotation SummarizationSetBy = Automatic
+
+			column goals
+				dataType: int64
+				formatString: 0
+				lineageTag: d672dcef-5667-4788-b0c5-f1f46e26c7f7
+				sourceLineageTag: goals
+				summarizeBy: sum
+				sourceColumn: goals
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_goals
+				dataType: int64
+				formatString: 0
+				lineageTag: f4ab0833-7ae5-4a2b-bf3f-c2cfc9fe5e07
+				sourceLineageTag: opponent_goals
+				summarizeBy: sum
+				sourceColumn: opponent_goals
+
+				annotation SummarizationSetBy = Automatic
+
+			column goal_difference
+				dataType: int64
+				formatString: 0
+				lineageTag: 517ae964-cd22-41c5-947b-c587720533d1
+				sourceLineageTag: goal_difference
+				summarizeBy: sum
+				sourceColumn: goal_difference
+
+				annotation SummarizationSetBy = Automatic
+
+			column shots
+				dataType: int64
+				formatString: 0
+				lineageTag: e65762c6-8f78-4e97-8936-1c200916c818
+				sourceLineageTag: shots
+				summarizeBy: sum
+				sourceColumn: shots
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_shots
+				dataType: int64
+				formatString: 0
+				lineageTag: 24f7caea-4da8-4668-a3ab-e72e7a00d015
+				sourceLineageTag: opponent_shots
+				summarizeBy: sum
+				sourceColumn: opponent_shots
+
+				annotation SummarizationSetBy = Automatic
+
+			column shot_difference
+				dataType: int64
+				formatString: 0
+				lineageTag: 5143b381-8c0b-4f25-a227-67b1c6e6f692
+				sourceLineageTag: shot_difference
+				summarizeBy: sum
+				sourceColumn: shot_difference
+
+				annotation SummarizationSetBy = Automatic
+
+			column shot_share_percentage
+				dataType: double
+				lineageTag: c8fc78f3-2e4d-45a7-9649-a8ed698d0954
+				sourceLineageTag: shot_share_percentage
+				summarizeBy: sum
+				sourceColumn: shot_share_percentage
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column shooting_percentage
+				dataType: double
+				lineageTag: ad9ada43-bf18-4b2f-bbfa-ce6075f63bde
+				sourceLineageTag: shooting_percentage
+				summarizeBy: sum
+				sourceColumn: shooting_percentage
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column power_play_opportunities
+				dataType: int64
+				formatString: 0
+				lineageTag: 5e5b59b7-62f5-4157-b7ed-9d6ac0b3e18e
+				sourceLineageTag: power_play_opportunities
+				summarizeBy: sum
+				sourceColumn: power_play_opportunities
+
+				annotation SummarizationSetBy = Automatic
+
+			column power_play_goals
+				dataType: int64
+				formatString: 0
+				lineageTag: 22bbf518-977a-4fb7-81bd-e40b4f099626
+				sourceLineageTag: power_play_goals
+				summarizeBy: sum
+				sourceColumn: power_play_goals
+
+				annotation SummarizationSetBy = Automatic
+
+			column power_play_efficiency
+				dataType: double
+				lineageTag: 259bde03-dac9-499d-a334-4a4b39b4d1aa
+				sourceLineageTag: power_play_efficiency
+				summarizeBy: sum
+				sourceColumn: power_play_efficiency
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column opponent_power_play_opportunities
+				dataType: int64
+				formatString: 0
+				lineageTag: 04c947e5-9c81-4b52-a78d-7987652dac20
+				sourceLineageTag: opponent_power_play_opportunities
+				summarizeBy: sum
+				sourceColumn: opponent_power_play_opportunities
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_power_play_goals
+				dataType: int64
+				formatString: 0
+				lineageTag: c86777b7-be5b-4385-bdc7-d6e91ea6249c
+				sourceLineageTag: opponent_power_play_goals
+				summarizeBy: sum
+				sourceColumn: opponent_power_play_goals
+
+				annotation SummarizationSetBy = Automatic
+
+			column penalty_kill_percentage
+				dataType: double
+				lineageTag: 30a54987-1084-49dd-8a0c-ebb664b842ae
+				sourceLineageTag: penalty_kill_percentage
+				summarizeBy: sum
+				sourceColumn: penalty_kill_percentage
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column hits
+				dataType: int64
+				formatString: 0
+				lineageTag: 6cd3b511-a18f-486c-9931-8c0d7fe547f4
+				sourceLineageTag: hits
+				summarizeBy: sum
+				sourceColumn: hits
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_hits
+				dataType: int64
+				formatString: 0
+				lineageTag: 766572a5-d30d-47a5-b841-601b8f4354ad
+				sourceLineageTag: opponent_hits
+				summarizeBy: sum
+				sourceColumn: opponent_hits
+
+				annotation SummarizationSetBy = Automatic
+
+			column hit_difference
+				dataType: int64
+				formatString: 0
+				lineageTag: 3ea57bc5-d924-4927-bdb8-26b5b82fd3a6
+				sourceLineageTag: hit_difference
+				summarizeBy: sum
+				sourceColumn: hit_difference
+
+				annotation SummarizationSetBy = Automatic
+
+			column penalty_minutes
+				dataType: int64
+				formatString: 0
+				lineageTag: 12b348b3-fe35-4b63-b81a-8e365d39e2d4
+				sourceLineageTag: penalty_minutes
+				summarizeBy: sum
+				sourceColumn: penalty_minutes
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_penalty_minutes
+				dataType: int64
+				formatString: 0
+				lineageTag: 085331b3-5bcc-4f4c-989f-eb9bedc7fc6b
+				sourceLineageTag: opponent_penalty_minutes
+				summarizeBy: sum
+				sourceColumn: opponent_penalty_minutes
+
+				annotation SummarizationSetBy = Automatic
+
+			column penalty_minutes_difference
+				dataType: int64
+				formatString: 0
+				lineageTag: ca00abd5-fea1-4958-96ae-85cfc8601014
+				sourceLineageTag: penalty_minutes_difference
+				summarizeBy: sum
+				sourceColumn: penalty_minutes_difference
+
+				annotation SummarizationSetBy = Automatic
+
+			column face_off_win_percentage
+				dataType: double
+				lineageTag: 863b10e0-440f-497b-a12e-5a44d4d05c17
+				sourceLineageTag: face_off_win_percentage
+				summarizeBy: sum
+				sourceColumn: face_off_win_percentage
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column opponent_face_off_win_percentage
+				dataType: double
+				lineageTag: 719fc40f-8ab4-461b-a174-fbe514e5c9a4
+				sourceLineageTag: opponent_face_off_win_percentage
+				summarizeBy: sum
+				sourceColumn: opponent_face_off_win_percentage
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column faceoff_percentage_difference
+				dataType: double
+				lineageTag: 5da221a9-6fff-40cb-aaf3-72c09c003ef3
+				sourceLineageTag: faceoff_percentage_difference
+				summarizeBy: sum
+				sourceColumn: faceoff_percentage_difference
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column giveaways
+				dataType: int64
+				formatString: 0
+				lineageTag: 6af14900-bddd-497f-8913-d37470b1ff76
+				sourceLineageTag: giveaways
+				summarizeBy: sum
+				sourceColumn: giveaways
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_giveaways
+				dataType: int64
+				formatString: 0
+				lineageTag: 88075c9b-30e4-49b4-8b7c-9e6d36edd085
+				sourceLineageTag: opponent_giveaways
+				summarizeBy: sum
+				sourceColumn: opponent_giveaways
+
+				annotation SummarizationSetBy = Automatic
+
+			column giveaway_difference
+				dataType: int64
+				formatString: 0
+				lineageTag: 2aec08d7-24e1-4baf-ae7c-05e84b739b29
+				sourceLineageTag: giveaway_difference
+				summarizeBy: sum
+				sourceColumn: giveaway_difference
+
+				annotation SummarizationSetBy = Automatic
+
+			column takeaways
+				dataType: int64
+				formatString: 0
+				lineageTag: 8194c646-1a52-49bf-bac7-5551df4684b0
+				sourceLineageTag: takeaways
+				summarizeBy: sum
+				sourceColumn: takeaways
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_takeaways
+				dataType: int64
+				formatString: 0
+				lineageTag: 20d741a3-01c7-434d-98f9-8c7999be0c84
+				sourceLineageTag: opponent_takeaways
+				summarizeBy: sum
+				sourceColumn: opponent_takeaways
+
+				annotation SummarizationSetBy = Automatic
+
+			column takeaway_difference
+				dataType: int64
+				formatString: 0
+				lineageTag: f2817d5e-1c0b-49fa-9ef3-e11085079366
+				sourceLineageTag: takeaway_difference
+				summarizeBy: sum
+				sourceColumn: takeaway_difference
+
+				annotation SummarizationSetBy = Automatic
+
+			column puck_management_balance
+				dataType: int64
+				formatString: 0
+				lineageTag: 703ec7f4-3cad-45f2-abe0-22fd33343600
+				sourceLineageTag: puck_management_balance
+				summarizeBy: sum
+				sourceColumn: puck_management_balance
+
+				annotation SummarizationSetBy = Automatic
+
+			column blocked
+				dataType: int64
+				formatString: 0
+				lineageTag: eed6f498-b25f-4d63-9baa-273d14e05e51
+				sourceLineageTag: blocked
+				summarizeBy: sum
+				sourceColumn: blocked
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_blocked
+				dataType: int64
+				formatString: 0
+				lineageTag: c34b805f-b2e3-432a-ad2a-e78870e441a7
+				sourceLineageTag: opponent_blocked
+				summarizeBy: sum
+				sourceColumn: opponent_blocked
+
+				annotation SummarizationSetBy = Automatic
+
+			column blocked_shot_difference
+				dataType: int64
+				formatString: 0
+				lineageTag: 5321897c-64f1-4144-bd0c-0cf41ef89264
+				sourceLineageTag: blocked_shot_difference
+				summarizeBy: sum
+				sourceColumn: blocked_shot_difference
+
+				annotation SummarizationSetBy = Automatic
+
+			column skaters_used
+				dataType: int64
+				formatString: 0
+				lineageTag: 0aec8575-56a2-424a-9f76-39752853bc60
+				sourceLineageTag: skaters_used
+				summarizeBy: sum
+				sourceColumn: skaters_used
+
+				annotation SummarizationSetBy = Automatic
+
+			column forwards_used
+				dataType: int64
+				formatString: 0
+				lineageTag: 6a8be927-2548-4989-9eb2-fd3f80ba6333
+				sourceLineageTag: forwards_used
+				summarizeBy: sum
+				sourceColumn: forwards_used
+
+				annotation SummarizationSetBy = Automatic
+
+			column defencemen_used
+				dataType: int64
+				formatString: 0
+				lineageTag: 9fd1fcbb-8d0e-4c83-bd2d-d04d4d4158cc
+				sourceLineageTag: defencemen_used
+				summarizeBy: sum
+				sourceColumn: defencemen_used
+
+				annotation SummarizationSetBy = Automatic
+
+			column skater_assists
+				dataType: int64
+				formatString: 0
+				lineageTag: 3d634f86-d6e9-479a-a5e1-525538e08552
+				sourceLineageTag: skater_assists
+				summarizeBy: sum
+				sourceColumn: skater_assists
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_plus_minus
+				dataType: int64
+				formatString: 0
+				lineageTag: 42e61483-f451-4809-8fcf-e206859efe49
+				sourceLineageTag: team_plus_minus
+				summarizeBy: sum
+				sourceColumn: team_plus_minus
+
+				annotation SummarizationSetBy = Automatic
+
+			column goal_scorers
+				dataType: int64
+				formatString: 0
+				lineageTag: f966f56f-7467-4fa5-a778-d95c646bf9ab
+				sourceLineageTag: goal_scorers
+				summarizeBy: sum
+				sourceColumn: goal_scorers
+
+				annotation SummarizationSetBy = Automatic
+
+			column point_contributors
+				dataType: int64
+				formatString: 0
+				lineageTag: 08d1317d-c3ee-42c2-8035-761ba9a9b5ea
+				sourceLineageTag: point_contributors
+				summarizeBy: sum
+				sourceColumn: point_contributors
+
+				annotation SummarizationSetBy = Automatic
+
+			column top_player_points
+				dataType: int64
+				formatString: 0
+				lineageTag: d95ae2ab-f3b9-4097-894a-6f2a2004a4ce
+				sourceLineageTag: top_player_points
+				summarizeBy: sum
+				sourceColumn: top_player_points
+
+				annotation SummarizationSetBy = Automatic
+
+			column points_per_scorer
+				dataType: double
+				lineageTag: 5811cada-49f7-4022-8ab1-306d7b5b0cc1
+				sourceLineageTag: points_per_scorer
+				summarizeBy: sum
+				sourceColumn: points_per_scorer
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column average_skater_toi_seconds
+				dataType: double
+				lineageTag: a8112f99-aabf-41e4-9fbf-fd719c3d8e3d
+				sourceLineageTag: average_skater_toi_seconds
+				summarizeBy: sum
+				sourceColumn: average_skater_toi_seconds
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column goalies_used
+				dataType: int64
+				formatString: 0
+				lineageTag: 874315a5-96a1-4c1d-98d3-c883ad8e521b
+				sourceLineageTag: goalies_used
+				summarizeBy: sum
+				sourceColumn: goalies_used
+
+				annotation SummarizationSetBy = Automatic
+
+			column goalie_saves
+				dataType: int64
+				formatString: 0
+				lineageTag: 6497c177-aaf7-4a86-ae13-e274fcf8ea22
+				sourceLineageTag: goalie_saves
+				summarizeBy: sum
+				sourceColumn: goalie_saves
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_save_percentage
+				dataType: double
+				lineageTag: 5960eb69-a9ea-498a-a42f-7239a1e99311
+				sourceLineageTag: team_save_percentage
+				summarizeBy: sum
+				sourceColumn: team_save_percentage
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column used_multiple_goalies
+				dataType: int64
+				formatString: 0
+				lineageTag: 9b87c538-7794-4152-b67a-8260cf0ec8e0
+				sourceLineageTag: used_multiple_goalies
+				summarizeBy: sum
+				sourceColumn: used_multiple_goalies
+
+				annotation SummarizationSetBy = Automatic
+
+			column total_goalie_toi_seconds
+				dataType: int64
+				formatString: 0
+				lineageTag: e54a9e5b-1634-41a9-b154-e1b637f00588
+				sourceLineageTag: total_goalie_toi_seconds
+				summarizeBy: sum
+				sourceColumn: total_goalie_toi_seconds
+
+				annotation SummarizationSetBy = Automatic
+
+			column complete_win_factor_analysis_flag
+				dataType: int64
+				formatString: 0
+				lineageTag: 1c3cc842-90b6-4cc2-96bb-5f35a75b298c
+				sourceLineageTag: complete_win_factor_analysis_flag
+				summarizeBy: sum
+				sourceColumn: complete_win_factor_analysis_flag
+
+				annotation SummarizationSetBy = Automatic
+
+			column date_key
+				dataType: int64
+				formatString: 0
+				lineageTag: 5b7e7e2c-5aae-45a0-84a3-6117851f4033
+				sourceLineageTag: date_key
+				summarizeBy: none
+				sourceColumn: date_key
+
+				annotation SummarizationSetBy = Automatic
+
+			partition gold_fact_team_game = entity
+				mode: directLake
+				source
+					entityName: gold_fact_team_game
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+		table gold_nhl_win_factors
+			isHidden
+			lineageTag: f23f796c-72a2-4a28-a11f-ff5978bf1e0f
+			sourceLineageTag: [dbo].[gold_nhl_win_factors]
+
+			column game_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: bc4e027e-8981-43ec-a683-ad7b0c6f0c44
+				sourceLineageTag: game_id
+				summarizeBy: sum
+				sourceColumn: game_id
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column season
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 06fad4c8-db10-44ba-9b8d-2b34bf281cb3
+				sourceLineageTag: season
+				summarizeBy: sum
+				sourceColumn: season
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column game_type
+				dataType: string
+				isHidden
+				lineageTag: fd5e53ea-0a89-4af5-a406-31ef93b8c5a6
+				sourceLineageTag: game_type
+				summarizeBy: none
+				sourceColumn: game_type
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column game_date
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 303dd286-e7d8-48aa-94b0-bc8c0909a16a
+				sourceLineageTag: game_date
+				summarizeBy: none
+				sourceColumn: game_date
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column game_date_time_gmt
+				dataType: dateTime
+				isHidden
+				formatString: General Date
+				lineageTag: 3a084860-fb22-4194-9919-535e55975c39
+				sourceLineageTag: game_date_time_gmt
+				summarizeBy: none
+				sourceColumn: game_date_time_gmt
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 3f5234bc-4bc7-4498-b1bd-3d5b111659e0
+				sourceLineageTag: team_id
+				summarizeBy: sum
+				sourceColumn: team_id
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_name
+				dataType: string
+				isHidden
+				lineageTag: 1453da77-1be9-44e4-9df9-d716f34474e2
+				sourceLineageTag: team_name
+				summarizeBy: none
+				sourceColumn: team_name
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_abbreviation
+				dataType: string
+				isHidden
+				lineageTag: ca24b75b-3c52-4f65-9210-3c8adc3b1fe5
+				sourceLineageTag: team_abbreviation
+				summarizeBy: none
+				sourceColumn: team_abbreviation
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_team_id
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 45f52ca0-1cd9-4fa6-990d-873d2cdaba22
+				sourceLineageTag: opponent_team_id
+				summarizeBy: sum
+				sourceColumn: opponent_team_id
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_team_name
+				dataType: string
+				isHidden
+				lineageTag: 6398dd31-af03-4bdb-a12c-e6ec9191adc8
+				sourceLineageTag: opponent_team_name
+				summarizeBy: none
+				sourceColumn: opponent_team_name
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_abbreviation
+				dataType: string
+				isHidden
+				lineageTag: de4a60c2-14ee-4e78-97bf-8fcf0e5dfcfa
+				sourceLineageTag: opponent_abbreviation
+				summarizeBy: none
+				sourceColumn: opponent_abbreviation
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column home_or_away
+				dataType: string
+				isHidden
+				lineageTag: 10886944-8680-4ce7-8cdb-f5e823789f22
+				sourceLineageTag: home_or_away
+				summarizeBy: none
+				sourceColumn: home_or_away
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column home_flag
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: d6bb581f-3eca-41d8-9a2a-f1b90cdf73bf
+				sourceLineageTag: home_flag
+				summarizeBy: sum
+				sourceColumn: home_flag
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column playoff_flag
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f0b2c461-863f-4ebb-b042-554b6cc77285
+				sourceLineageTag: playoff_flag
+				summarizeBy: sum
+				sourceColumn: playoff_flag
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column settled_in
+				dataType: string
+				isHidden
+				lineageTag: 1f4ad732-52da-424b-86b1-cc88fd5a2969
+				sourceLineageTag: settled_in
+				summarizeBy: none
+				sourceColumn: settled_in
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column regulation_flag
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c1672948-65b5-4814-8d13-74c740bee4bd
+				sourceLineageTag: regulation_flag
+				summarizeBy: sum
+				sourceColumn: regulation_flag
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column overtime_flag
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: d78ea0d3-8599-4ea9-b674-f197258d8c60
+				sourceLineageTag: overtime_flag
+				summarizeBy: sum
+				sourceColumn: overtime_flag
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column head_coach
+				dataType: string
+				isHidden
+				lineageTag: 8a6b4dcb-a1d2-43f2-baab-619e8a980a0a
+				sourceLineageTag: head_coach
+				summarizeBy: none
+				sourceColumn: head_coach
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column start_rink_side
+				dataType: string
+				isHidden
+				lineageTag: 85ddc939-b840-4af8-b694-700aaa90b7b2
+				sourceLineageTag: start_rink_side
+				summarizeBy: none
+				sourceColumn: start_rink_side
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column is_win
+				dataType: boolean
+				isHidden
+				formatString: """TRUE"";""TRUE"";""FALSE"""
+				lineageTag: 2a8adf98-c81d-4eac-93c5-ed9e48f8f096
+				sourceLineageTag: is_win
+				summarizeBy: none
+				sourceColumn: is_win
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column win_flag
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 2f0c3f95-c988-4542-89cf-c111516cf7eb
+				sourceLineageTag: win_flag
+				summarizeBy: sum
+				sourceColumn: win_flag
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column result_category
+				dataType: string
+				isHidden
+				lineageTag: 31bd7546-54e6-487d-b944-07bdde86b04e
+				sourceLineageTag: result_category
+				summarizeBy: none
+				sourceColumn: result_category
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column winning_rows_in_game
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: a9c491e0-5e58-4d15-9514-a6af47f8b7ba
+				sourceLineageTag: winning_rows_in_game
+				summarizeBy: sum
+				sourceColumn: winning_rows_in_game
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column win_loss_analysis_flag
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9a523099-d7c8-4c5c-abdd-e64e26be5d1c
+				sourceLineageTag: win_loss_analysis_flag
+				summarizeBy: sum
+				sourceColumn: win_loss_analysis_flag
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column goals
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f80486da-d9c4-4fbe-8473-925d98ae685d
+				sourceLineageTag: goals
+				summarizeBy: sum
+				sourceColumn: goals
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_goals
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: becb9c64-536b-436c-8146-b935464a485a
+				sourceLineageTag: opponent_goals
+				summarizeBy: sum
+				sourceColumn: opponent_goals
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column goal_difference
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 1ae9a105-8b0f-4884-b48d-ccc234682ce9
+				sourceLineageTag: goal_difference
+				summarizeBy: sum
+				sourceColumn: goal_difference
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column shots
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: ea5204a6-4813-4a75-9d8d-b304357376c4
+				sourceLineageTag: shots
+				summarizeBy: sum
+				sourceColumn: shots
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_shots
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: d57f4c6b-c29b-40ca-abb8-f4f20e7e7a86
+				sourceLineageTag: opponent_shots
+				summarizeBy: sum
+				sourceColumn: opponent_shots
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column shot_difference
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 9bab81f4-8c87-4505-9228-2e18c35c5195
+				sourceLineageTag: shot_difference
+				summarizeBy: sum
+				sourceColumn: shot_difference
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column shot_share_percentage
+				dataType: double
+				isHidden
+				lineageTag: 02250241-a4b1-40fc-8d85-564b4d25dfb4
+				sourceLineageTag: shot_share_percentage
+				summarizeBy: sum
+				sourceColumn: shot_share_percentage
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column shooting_percentage
+				dataType: double
+				isHidden
+				lineageTag: 281137b4-ec0b-45cc-8461-be3bfec3c417
+				sourceLineageTag: shooting_percentage
+				summarizeBy: sum
+				sourceColumn: shooting_percentage
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column power_play_opportunities
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f077aff5-b107-410c-a41f-89e749e268ba
+				sourceLineageTag: power_play_opportunities
+				summarizeBy: sum
+				sourceColumn: power_play_opportunities
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column power_play_goals
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 55d466eb-4e28-48fc-8969-3141a22588e2
+				sourceLineageTag: power_play_goals
+				summarizeBy: sum
+				sourceColumn: power_play_goals
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column power_play_efficiency
+				dataType: double
+				isHidden
+				lineageTag: 319d60c0-4b31-4b12-98d4-16262a07c520
+				sourceLineageTag: power_play_efficiency
+				summarizeBy: sum
+				sourceColumn: power_play_efficiency
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column opponent_power_play_opportunities
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 83af9b9c-9c62-43ee-b016-4ffea87e7f63
+				sourceLineageTag: opponent_power_play_opportunities
+				summarizeBy: sum
+				sourceColumn: opponent_power_play_opportunities
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_power_play_goals
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c6fefa24-174b-4072-8952-ae2bb2022d9d
+				sourceLineageTag: opponent_power_play_goals
+				summarizeBy: sum
+				sourceColumn: opponent_power_play_goals
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column penalty_kill_percentage
+				dataType: double
+				isHidden
+				lineageTag: b337ff79-1b3b-49b3-8d6a-68935282e2cb
+				sourceLineageTag: penalty_kill_percentage
+				summarizeBy: sum
+				sourceColumn: penalty_kill_percentage
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column hits
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: df7b60a5-ccc3-4c93-bddd-146c6eb77d00
+				sourceLineageTag: hits
+				summarizeBy: sum
+				sourceColumn: hits
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_hits
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: a72650c9-59fa-45e9-b6fd-1c75e48b4346
+				sourceLineageTag: opponent_hits
+				summarizeBy: sum
+				sourceColumn: opponent_hits
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column hit_difference
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 4a890045-cd74-46ca-b8dc-92127ec0996d
+				sourceLineageTag: hit_difference
+				summarizeBy: sum
+				sourceColumn: hit_difference
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column penalty_minutes
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: c459e517-0849-430e-94a0-a8093139671d
+				sourceLineageTag: penalty_minutes
+				summarizeBy: sum
+				sourceColumn: penalty_minutes
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_penalty_minutes
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 1f0e48ce-66c1-411d-ad82-f9238a94c28d
+				sourceLineageTag: opponent_penalty_minutes
+				summarizeBy: sum
+				sourceColumn: opponent_penalty_minutes
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column penalty_minutes_difference
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 2728765e-03ec-4df4-8a7c-049644579344
+				sourceLineageTag: penalty_minutes_difference
+				summarizeBy: sum
+				sourceColumn: penalty_minutes_difference
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column face_off_win_percentage
+				dataType: double
+				isHidden
+				lineageTag: 1abbea4c-15d2-4074-b284-a27dc920c254
+				sourceLineageTag: face_off_win_percentage
+				summarizeBy: sum
+				sourceColumn: face_off_win_percentage
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column opponent_face_off_win_percentage
+				dataType: double
+				isHidden
+				lineageTag: 299e908f-2ef8-4fcf-924b-68aad24ff9cc
+				sourceLineageTag: opponent_face_off_win_percentage
+				summarizeBy: sum
+				sourceColumn: opponent_face_off_win_percentage
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column faceoff_percentage_difference
+				dataType: double
+				isHidden
+				lineageTag: d8e06cc4-7fff-45ae-a4e2-10825a5fd704
+				sourceLineageTag: faceoff_percentage_difference
+				summarizeBy: sum
+				sourceColumn: faceoff_percentage_difference
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column giveaways
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: ea2b2aa5-b230-432f-9d69-cae2d2152535
+				sourceLineageTag: giveaways
+				summarizeBy: sum
+				sourceColumn: giveaways
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_giveaways
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: b3b9b9e0-539f-4dc0-b476-1f444063f284
+				sourceLineageTag: opponent_giveaways
+				summarizeBy: sum
+				sourceColumn: opponent_giveaways
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column giveaway_difference
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: e880961a-a252-432c-85d0-8844ef7b8e5c
+				sourceLineageTag: giveaway_difference
+				summarizeBy: sum
+				sourceColumn: giveaway_difference
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column takeaways
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 3ddf6065-e592-4925-8997-140336e8a222
+				sourceLineageTag: takeaways
+				summarizeBy: sum
+				sourceColumn: takeaways
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_takeaways
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: d1a614c6-f21d-4f7c-9ffc-465e3af4000b
+				sourceLineageTag: opponent_takeaways
+				summarizeBy: sum
+				sourceColumn: opponent_takeaways
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column takeaway_difference
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 30d714e1-5548-4f5d-b587-4b8f39f57b71
+				sourceLineageTag: takeaway_difference
+				summarizeBy: sum
+				sourceColumn: takeaway_difference
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column puck_management_balance
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 053233bd-b3ea-494c-985f-ded59d235f8c
+				sourceLineageTag: puck_management_balance
+				summarizeBy: sum
+				sourceColumn: puck_management_balance
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column blocked
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f4da038b-dd10-4b34-a47f-9d2900827ffb
+				sourceLineageTag: blocked
+				summarizeBy: sum
+				sourceColumn: blocked
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column opponent_blocked
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 0319ced2-65f3-4afd-93eb-d882e5e4b557
+				sourceLineageTag: opponent_blocked
+				summarizeBy: sum
+				sourceColumn: opponent_blocked
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column blocked_shot_difference
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 663874fd-ff7e-4f49-a6d9-5f67dd872eb6
+				sourceLineageTag: blocked_shot_difference
+				summarizeBy: sum
+				sourceColumn: blocked_shot_difference
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column skaters_used
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 2ef183aa-ac7b-4f7b-a9d9-29910e283955
+				sourceLineageTag: skaters_used
+				summarizeBy: sum
+				sourceColumn: skaters_used
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column forwards_used
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 86d66625-97fe-4cf8-9228-6e975df560e5
+				sourceLineageTag: forwards_used
+				summarizeBy: sum
+				sourceColumn: forwards_used
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column defencemen_used
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: b9949cac-6767-4c88-80a3-b297fd917668
+				sourceLineageTag: defencemen_used
+				summarizeBy: sum
+				sourceColumn: defencemen_used
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column skater_assists
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 170b5d58-2411-4ac0-a47b-692e903879b8
+				sourceLineageTag: skater_assists
+				summarizeBy: sum
+				sourceColumn: skater_assists
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_plus_minus
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: d1f37322-12ab-435b-ab9b-0f3440055798
+				sourceLineageTag: team_plus_minus
+				summarizeBy: sum
+				sourceColumn: team_plus_minus
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column goal_scorers
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: ec276b29-7f2c-43bf-983a-17b93d034370
+				sourceLineageTag: goal_scorers
+				summarizeBy: sum
+				sourceColumn: goal_scorers
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column point_contributors
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 44f51dc1-e7a2-4102-8b1c-2ddb62c466bf
+				sourceLineageTag: point_contributors
+				summarizeBy: sum
+				sourceColumn: point_contributors
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column top_player_points
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: b7be5c7c-9c19-46ab-8f90-9e8385d5cf28
+				sourceLineageTag: top_player_points
+				summarizeBy: sum
+				sourceColumn: top_player_points
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column points_per_scorer
+				dataType: double
+				isHidden
+				lineageTag: d18bcd9d-23fe-4ed8-b3a8-c28f650ee7d2
+				sourceLineageTag: points_per_scorer
+				summarizeBy: sum
+				sourceColumn: points_per_scorer
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column average_skater_toi_seconds
+				dataType: double
+				isHidden
+				lineageTag: aced2562-fc84-490e-b620-82e27cf39230
+				sourceLineageTag: average_skater_toi_seconds
+				summarizeBy: sum
+				sourceColumn: average_skater_toi_seconds
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column goalies_used
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 59724c99-977c-4ccc-b76e-9b7107905976
+				sourceLineageTag: goalies_used
+				summarizeBy: sum
+				sourceColumn: goalies_used
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column goalie_saves
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: f5dd9b2c-1608-4c35-a43d-42ad342314c5
+				sourceLineageTag: goalie_saves
+				summarizeBy: sum
+				sourceColumn: goalie_saves
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column team_save_percentage
+				dataType: double
+				isHidden
+				lineageTag: 1591b694-ad06-4022-8c0c-ee29bc7078bb
+				sourceLineageTag: team_save_percentage
+				summarizeBy: sum
+				sourceColumn: team_save_percentage
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column used_multiple_goalies
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 8de50c0c-34d5-4ec3-a540-f34bc73ae932
+				sourceLineageTag: used_multiple_goalies
+				summarizeBy: sum
+				sourceColumn: used_multiple_goalies
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column total_goalie_toi_seconds
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 7073ecd3-0090-472b-9322-2a5d09e1663e
+				sourceLineageTag: total_goalie_toi_seconds
+				summarizeBy: sum
+				sourceColumn: total_goalie_toi_seconds
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column complete_metric_period_flag
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 1cebdd22-a6f3-4aa1-ac2b-66442f63c07a
+				sourceLineageTag: complete_metric_period_flag
+				summarizeBy: sum
+				sourceColumn: complete_metric_period_flag
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column complete_win_factor_analysis_flag
+				dataType: int64
+				isHidden
+				formatString: 0
+				lineageTag: 3da0ae07-9b1c-45b5-82b4-5319054d9a2c
+				sourceLineageTag: complete_win_factor_analysis_flag
+				summarizeBy: sum
+				sourceColumn: complete_win_factor_analysis_flag
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			partition gold_nhl_win_factors = entity
+				mode: directLake
+				source
+					entityName: gold_nhl_win_factors
+					schemaName: dbo
+					expressionSource: 'DirectLake - nhl_lakehouse_gold'
+
+			changedProperty = IsHidden
+
+		relationship 28378e9a-7479-5a9d-6954-b0c24a2fdc08
+			fromColumn: gold_fact_team_game.team_id
+			toColumn: gold_dim_team.team_id
+
+		relationship 73548787-3202-bea1-6529-ac41164cc1ec
+			fromColumn: gold_fact_team_game.opponent_team_id
+			toColumn: gold_dim_opponent.opponent_team_id
+
+		relationship 5f59fe4c-fc6a-0794-1b44-3c0264f14d83
+			fromColumn: gold_fact_team_game.date_key
+			toColumn: gold_dim_date.date_key
+
+		relationship 2a791e27-0187-2d1f-74cd-54e5b68b6de1
+			fromColumn: gold_fact_team_game.season
+			toColumn: gold_dim_season.season
+
+		expression 'DirectLake - nhl_lakehouse_gold' =
+				let
+				    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/71d6ec2c-5b2b-4309-9f9f-61a929294680/604bfcd4-f7d1-4a93-be5a-8bcca78c5b36", [HierarchicalNavigation=true])
+				in
+				    Source
+			lineageTag: 098af752-cfbe-41d1-8e83-77831b2d2cbb
+
+			annotation PBI_IncludeFutureArtifacts = False
+
+		annotation __PBI_TimeIntelligenceEnabled = 1
+
+		annotation PBI_QueryOrder = ["DirectLake - nhl_lakehouse_gold"]
+
+		annotation __LastRPTime = 134344688811403904
+
+		annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit","TMDLView_Desktop","RemoteModeling"]
+

@@ -26,7 +26,7 @@ Silver table | Grain | Rows |
 'silver_player_info' | One row per player | 3,925 |
 'silver_game_goalie_stats' | One row per game per goalie | 51,163 |
 
-The raw dataset is not included in this repository. Download it from Kaggle and follow its stated usage terms.
+The raw dataset is not included in this repository.
 
 ## Technology stack
 
